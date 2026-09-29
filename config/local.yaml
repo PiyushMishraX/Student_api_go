@@ -1,0 +1,15 @@
+# env: "dev" # developemnt 
+
+# # sql lite file based path , for production we can put it anywhere , it should be configurable
+
+# storage_path: "storage/storage.db"
+# http_server: 
+#   address: "localhost:8082" # yaml --> indentation imp
+# # timeout : etc can be written too in future
+
+
+env: "dev"
+storage_path: "storage/storage_path"
+http_server:
+  address: "localhost:8082"
+
