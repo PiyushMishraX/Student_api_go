@@ -29,3 +29,7 @@ go.work.sum
 
 # database files
 storage
+
+# good practice to hide config file , so all credentials will be safe too
+# /config # root level config removed from tracking "/" # pushing config folder for this project only 
+/config_main

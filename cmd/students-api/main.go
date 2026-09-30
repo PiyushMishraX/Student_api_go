@@ -1,10 +1,10 @@
 package main // package declaration at start of file
 
-import "fmt" 
+// import "fmt" 
 // main is entry point
 
 func main() {
-	fmt.Println("Welcome to students api")
+	// fmt.Println("Welcome to students api")
 
 	
 
