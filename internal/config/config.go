@@ -25,7 +25,7 @@ type HTTPServer struct {
 // fetching "env" from yaml file, not present then env file , setting required makes it important to be present
 // setting env-default to "production" will be safe guard so when something goes wrong and the dev config aren't fetched the production one will be used so logs etc aren't shown to user
 
-type Config struct  *Config{
+type Config struct {
 	// Env 		string  `yaml:"env"  env:"ENV" env-required:"true" env-default: "production"`
 	Env         string `yaml:"env"  env:"ENV" env-required:"true"`
 	storagePath string `yaml:"storage_path" env-required:"true"`
@@ -34,8 +34,8 @@ type Config struct  *Config{
 
 // parsing login
 
-func MustLoad() {
-	// any error in "Must" Load means the code ahead should not be used
+func MustLoad() *Config{
+	// any error in "Must" Load means the code ahead should not be used // do not return error from MustLoad because "Must" mus twork if error occurs just print error
 
 	var configPath string
 
