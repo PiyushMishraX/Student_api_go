@@ -9,7 +9,7 @@ import (
 )
 
 type HTTPServer struct {
-	Addr string
+	Addr string `yaml:"address" env-required:"true"`  // fetch Addr
 }
 
 // type Config struct {
@@ -46,6 +46,7 @@ func MustLoad() *Config{
 		// go run file_path -config-path xyz
 
 		flags := flag.String("config", "", "path to the configuration file" )
+		flag.Parse()
 
 		configPath = *flags // dereference flag pointer
 

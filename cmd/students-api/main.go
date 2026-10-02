@@ -42,14 +42,34 @@ func main() {
 		Handler: router,
 	}
 
-	err := server.ListenAndServe() // start 
-	if err != nil {
-		log.Fatalf("failed to start server")
-	}
+	// fmt.Println("Server started")
+	fmt.Printf("Server started %s", cfg.HTTPServer.Addr)
 
-	fmt.Println("Server started")
+
+
+	go func () {
+		err := server.ListenAndServe() // start  // blocking
+		if err != nil {
+			log.Fatalf("failed to start server")
+		}
+	} ()
+
+	// err := server.ListenAndServe() // start  // blocking
+	// if err != nil {
+	// 	log.Fatalf("failed to start server")
+	// } // prouduction aren't such simple adding graceful stop 
+	// to stop ongoing request from not stop while shutdown , it is required in production 
+	// creating seperate goroutine and channel
+	
+	
+
 
 	
 
 
 }
+
+
+
+
+// without flag appllication do not run becuase "Must"
